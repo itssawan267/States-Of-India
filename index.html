@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States of India</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #3333
+            box-sizing: border-box; 
+        }
+
+        header {
+            background-color: #4CAF50;
+            text-align: center;
+            padding: 30px;
+            padding-left: 15px;
+            color: white;
+            font-size: 24px;
+            background-image:url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGlmbn5thb6Gw5ShPRUqAxU5X5_NBNgIOibA&s)
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+
+        header p {
+            font-size: 18px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        .state-section {
+            background-color: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+            transition: all 0.3s ease;
+        }
+
+        .state-section h2 {
+            color: #4CAF50;
+            cursor: pointer;
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .state-section p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .state-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        /* Checkbox and Label Styling */
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label {
+            display: block;
+            padding: 15px;
+            background-color: #4CAF50;
+            color: white;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 20px;
+            text-align: center;
+            transition: background-color 0.3s ease;
+        }
+
+        label:hover {
+            background-color: blue;
+        }
+
+        /* When checkbox is checked, show the state section */
+        input[type="checkbox"]:checked + label + .state-section {
+            display: block;
+        }
+
+        /* Card Layout Styling */
+        .state-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background-color:palevioletred;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .state-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .state-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+
+        /* Grid Layout */
+        .state-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .map {
+            display: flex;
+            justify-content: center; 
+            align-items: center;     
+            width: 100%;            
+            height: 100vh;         
+        }
+        .map iframe {
+            width: 100%;
+            height: 100%;
+        }
+        .overlap-image {
+            position: absolute;
+            top: 37%;           
+            left: 17%;          
+            transform: translate(-50%, -50%); 
+            width: 50%;          
+            pointer-events: none; 
+            height: 100px;
+            width: 200px;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1><b>States of India</b></h1>
+        <p>Explore the cultural diversity of India's states.</p>
+    </header>
+<div class="map"><div class="map">
+    <iframe src="https://player.vimeo.com/video/95630017" width="900" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    <img src="india.png" alt="Overlapping Image" class="overlap-image">
+</div>
+</div>
+    <div class="container">
+
+        <div class="state-grid">
+
+            <!-- Andhra Pradesh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-1">
+                <label for="state-1">Andhra Pradesh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Amaravati</p>
+                    <p>Andhra Pradesh is known for its rich cultural heritage, historical landmarks, and beautiful beaches. Famous for the Tirupati Temple.</p><img src="andhra.jpg" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Arunachal Pradesh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-2">
+                <label for="state-2">Arunachal Pradesh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Itanagar</p>
+                    <p>Arunachal Pradesh is famous for its scenic landscapes, diverse flora and fauna, and Tibetan cultural influences, with Tawang Monastery.</p>
+                    <img src="arunachal.jpg" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Assam -->
+            <div class="state-card">
+                <input type="checkbox" id="state-3">
+                <label for="state-3">Assam</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Dispur</p>
+                    <p>Assam is renowned for its tea gardens, wildlife sanctuaries, and vibrant festivals. Kaziranga National Park is famous for rhinos.</p>
+                    <img src="assam.jpg" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Bihar -->
+            <div class="state-card">
+                <input type="checkbox" id="state-4">
+                <label for="state-4">Bihar</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Patna</p>
+                    <p>Bihar is known for being the birthplace of Buddhism, with sites like Bodh Gaya attracting global pilgrims.</p>
+                    <img src="bihar.jpg" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Chhattisgarh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-5">
+                <label for="state-5">Chhattisgarh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Raipur</p>
+                    <p>Chhattisgarh is famous for its natural beauty, mineral resources, and tribal culture, with ancient temples and wildlife sanctuaries.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdav6sYQWjU3vRpnhTHdo1JvK4Ye3TilOy_w&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Goa -->
+            <div class="state-card">
+                <input type="checkbox" id="state-6">
+                <label for="state-6">Goa</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Panaji</p>
+                    <p>Goa is famous for its beaches, Portuguese architecture, vibrant nightlife, and cultural fusion reflected in festivals and music.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTApxyTDNphyMN9M8C79-wPZcAOULU8Nzo0kg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Gujarat -->
+            <div class="state-card">
+                <input type="checkbox" id="state-7">
+                <label for="state-7">Gujarat</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Gandhinagar</p>
+                    <p>Gujarat is known for landmarks like the Statue of Unity, rich cultural traditions, colorful festivals, and delicious cuisine.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqm3CHmibaZL9aot_U-p-V82FJyY41PCNfuw&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Haryana -->
+            <div class="state-card">
+                <input type="checkbox" id="state-8">
+                <label for="state-8">Haryana</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Chandigarh</p>
+                    <p>Haryana is a hub for agriculture and home to Kurukshetra, a region of great religious significance in Hindu mythology.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsIibl1sG7Po7O_0cJnLZK31i4kY6FZODCg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Himachal Pradesh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-9">
+                <label for="state-9">Himachal Pradesh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Shimla</p>
+                    <p>Himachal Pradesh is known for its stunning landscapes, hill stations like Manali, and adventure tourism activities.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJm9tmGB7cI6vnhm7Rz0NdPiqZAHalvzjaTA&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Jharkhand -->
+            <div class="state-card">
+                <input type="checkbox" id="state-10">
+                <label for="state-10">Jharkhand</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Ranchi</p>
+                    <p>Jharkhand is rich in natural resources, known for dense forests, waterfalls, and indigenous tribal culture.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyjLZnVDVzYXQ9JAISkv_wF7T3w00cVcwqzg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Karnataka -->
+            <div class="state-card">
+                <input type="checkbox" id="state-11">
+                <label for="state-11">Karnataka</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Bengaluru</p>
+                    <p>Karnataka is famous for its historical landmarks, stunning temples, and modern cities like Bengaluru. Hampi's ruins are a UNESCO World Heritage site.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDz92HYJKM27tLofe3OYIsduB4pWf9vcF0JA&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Kerala -->
+            <div class="state-card">
+                <input type="checkbox" id="state-12">
+                <label for="state-12">Kerala</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Thiruvananthapuram</p>
+                    <p>Known as "God's Own Country," Kerala is famous for its backwaters, Ayurveda, hill stations, and cultural festivals like Onam.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSN5kZ0xxeWOza1q3q_3euhCNLk6SewDL-Kg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Madhya Pradesh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-13">
+                <label for="state-13">Madhya Pradesh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Bhopal</p>
+                    <p>Madhya Pradesh is home to the UNESCO World Heritage site Khajuraho, wildlife sanctuaries, and significant temples.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMk3nJ_RDjsIl6UuvwHF8MXa1j-eiC0ERppg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Maharashtra -->
+            <div class="state-card">
+                <input type="checkbox" id="state-14">
+                <label for="state-14">Maharashtra</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Mumbai</p>
+                    <p>Maharashtra is the financial capital of India, home to Bollywood, Ajanta and Ellora caves, and beautiful beaches like Alibaug.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs_Rnt1knoPZjEW9U_a5l4mTr0Pve4jGbWLQ&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Manipur -->
+            <div class="state-card">
+                <input type="checkbox" id="state-15">
+                <label for="state-15">Manipur</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Imphal</p>
+                    <p>Manipur is known for its classical dance form Manipuri, colorful festivals, and scenic beauty.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXbAXbauifTdIg8QDbe2GNLgI4x8IY7utJSg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Meghalaya -->
+            <div class="state-card">
+                <input type="checkbox" id="state-16">
+                <label for="state-16">Meghalaya</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Shillong</p>
+                    <p>Meghalaya is famous for its living root bridges, scenic landscapes, and being the "Abode of Clouds."</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcsKFLu_3qZf4g91R8DkcGBcB7jr0Jpwdl_g&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Mizoram -->
+            <div class="state-card">
+                <input type="checkbox" id="state-17">
+                <label for="state-17">Mizoram</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Aizawl</p>
+                    <p>Mizoram is known for its picturesque hills, rich cultural traditions, and the vibrant Mizo festivals.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT_CEhwvcr1JkxJ0DTf6wvTOQwMsny1fpdVRg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Nagaland -->
+            <div class="state-card">
+                <input type="checkbox" id="state-18">
+                <label for="state-18">Nagaland</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Kohima</p>
+                    <p>Nagaland is home to several indigenous tribes, and its cultural heritage is rich in folk traditions, festivals, and wildlife.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD-Lz6rGv6bBeTZPMvxNcfCyxzmQeQBoENyQ&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Odisha -->
+            <div class="state-card">
+                <input type="checkbox" id="state-19">
+                <label for="state-19">Odisha</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Bhubaneswar</p>
+                    <p>Odisha is famous for the Sun Temple of Konark, pristine beaches, and the annual Rath Yatra festival.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEu-uJnQZ805-gzanWYrCmtPYitDcHLVLNEg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Punjab -->
+            <div class="state-card">
+                <input type="checkbox" id="state-20">
+                <label for="state-20">Punjab</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Chandigarh</p>
+                    <p>Punjab is known for its agricultural abundance, the Golden Temple in Amritsar, and vibrant festivals like Baisakhi and Lohri.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcfJleu6ka0Y-fsjNimPiQd2m8wOPdLxb9mg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Rajasthan -->
+            <div class="state-card">
+                <input type="checkbox" id="state-21">
+                <label for="state-21">Rajasthan</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Jaipur</p>
+                    <p>Rajasthan is famous for its royal palaces, forts, and desert landscapes. Udaipur and Jodhpur are must-see destinations.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkffvTN5paUNLdDiyU2-iBPDQG5eke_BuqMg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Sikkim -->
+            <div class="state-card">
+                <input type="checkbox" id="state-22">
+                <label for="state-22">Sikkim</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Gangtok</p>
+                    <p>Sikkim is known for its stunning landscapes, Himalayan peaks, Buddhist monasteries, and rich biodiversity.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnOHabfUgqkbwtiABYlY-6uokS7PkAMfDhPA&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Tamil Nadu -->
+            <div class="state-card">
+                <input type="checkbox" id="state-23">
+                <label for="state-23">Tamil Nadu</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Chennai</p>
+                    <p>Tamil Nadu is renowned for its ancient temples, classical dance forms like Bharatanatyam, and the famous Kanchipuram silk sarees.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWvvF7Nz8ptFQBDwbH3nnADF_8NlIQOdCanw&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Telangana -->
+            <div class="state-card">
+                <input type="checkbox" id="state-24">
+                <label for="state-24">Telangana</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Hyderabad</p>
+                    <p>Telangana is known for its rich cultural history, Hyderabad's Biryani, and the historic Charminar.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdWug3GPdEWqa5L3tKBWreczhjP7bUnFpxIw&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Tripura -->
+            <div class="state-card">
+                <input type="checkbox" id="state-25">
+                <label for="state-25">Tripura</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Agartala</p>
+                    <p>Tripura is famous for its natural beauty, palaces, and temples. It has a rich cultural heritage, with many tribal festivals.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLo3kDEYv4B6pBZFE5uYg1jJIx6g8MTmuTCg&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Uttar Pradesh -->
+            <div class="state-card">
+                <input type="checkbox" id="state-26">
+                <label for="state-26">Uttar Pradesh</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Lucknow</p>
+                    <p>Uttar Pradesh is home to iconic landmarks like the Taj Mahal and Varanasi, one of the oldest cities in the world.</p>
+                    <img src="https://www.indyatour.com/images/india/uttar-pradesh/up-varanasi-city.jpg" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- Uttarakhand -->
+            <div class="state-card">
+                <input type="checkbox" id="state-27">
+                <label for="state-27">Uttarakhand</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Dehradun</p>
+                    <p>Uttarakhand is known for its temples, hill stations, and the Char Dham Yatra. It’s a major destination for trekking and wildlife.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXHi0ZqaxZK4TUwfz7bFNrlcTCfY8uV0Cx0A&s" height="50px" width="50px">
+                </div>
+            </div>
+
+            <!-- West Bengal -->
+            <div class="state-card">
+                <input type="checkbox" id="state-28">
+                <label for="state-28">West Bengal</label>
+                <div class="state-section">
+                    <p><strong>Capital:</strong> Kolkata</p>
+                    <p>West Bengal is known for its cultural diversity, iconic festivals like Durga Puja, and its unique cuisine, such as fish curry and sweets.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJp_8Ozi76xx3yVEDWXI1cUpeqtA7JjKe-EQ&s" height="50px" width="50px">
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+</body>
+</html>
